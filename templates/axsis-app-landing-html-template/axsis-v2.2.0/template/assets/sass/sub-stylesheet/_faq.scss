@@ -1,0 +1,220 @@
+
+.container-sm {
+  max-width: 775px;
+  margin: auto;
+}
+
+.faq {
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0px 10px 0 rgba(34, 34, 34, 0.06);
+  @include border-radius(5px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .faq-header {
+    box-shadow: 0 0px 10px 0 rgba(34, 34, 34, 0.06);
+    @include border-radius(5px);
+    .btn-link {
+      width: 100%;
+      padding: 20px 50px 22px 80px;
+      text-align: left;
+      background-color: $white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #273167;
+      border:none;
+      position: relative;
+      cursor: pointer;
+      @include breakpoint(xxl-desktop){
+        font-size: 18px;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        @include border-radius(50%);
+        text-align: center;
+        background-color: $base-color;
+        i {
+          line-height: 30px;
+          color: #fff;
+        }
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        margin-top: -15px;
+      }
+      .fa-minus {
+        display: block;
+      }
+      .fa-plus {
+        display: none;
+      }
+      &.collapsed {
+        color: #273167;
+        .icon {
+          background-color: #ebebeb;
+          .fa-minus {
+            display: none;
+          }
+          .fa-plus {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .faq-body {
+    padding: 20px 30px 20px 40px;
+    p {
+      font-size: 16px;
+      line-height: 2.1;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include breakpoint(md){
+      padding: 40px 60px 30px 80px;
+    }
+  }
+}
+
+
+.home3 {
+  .faq .faq-header .btn-link.collapsed .icon {
+      background-color: #ebebeb;
+  }
+  .faq .faq-header .btn-link .icon {
+    background-color: #01d85f;
+  }
+  .faq {
+    border: 1px solid #c3ddce;
+  }
+  .faq .faq-body {
+    border-top: 1px solid #c3ddce;
+  }
+}
+
+.home4 {
+  .faq .faq-header .btn-link.collapsed .icon {
+      background-color: #ebebeb;
+  }
+  .faq .faq-header .btn-link .icon {
+    background-color: #2e46c9;
+  }
+  .faq .faq-header .btn-link {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    @include breakpoint(xxl-desktop){
+      font-size: 14px;
+    }
+  }
+  .faq .faq-body {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
+// axsis-faq-section style 2
+.axsis-faq-section.style2 {
+  .accordion {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .faq {
+    margin-bottom: 10px;
+    background-color: transparent;
+    box-shadow: 0 0px 10px 0 rgba(34, 34, 34, 0.06);
+    border: 1px solid #1a3580;
+    @include border-radius(40px);
+    &.open {
+      background-color: #061f57;
+      border-color: #061f57;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .faq-header {
+      box-shadow: 0 0px 10px 0 rgba(34, 34, 34, 0.06);
+      @include border-radius(5px);
+      .btn-link {
+        width: 100%;
+        padding: 20px 70px 22px 50px;
+        text-align: left;
+        font-family: $ff-montserrat;
+        background-color: transparent;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #f2f8fe;
+        position: relative;
+        cursor: pointer;
+        .icon {
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          @include border-radius(50%);
+          text-align: center;
+          background: -webkit-linear-gradient(45deg,#bb2970 0%, #ec5969 100%);
+          i {
+            line-height: 20px;
+            color: #fff;
+            font-size: 13px;
+          }
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          margin-top: -10px;
+          margin-left: -50px;
+        }
+        .fa-minus {
+          display: block;
+        }
+        .fa-plus {
+          display: none;
+        }
+        &.collapsed {
+          color: #99bffb;
+          background-color: transparent;
+          .icon {
+            background: -webkit-linear-gradient(45deg,#2468d4 0%, #2468d4 100%);
+            color: #06164a;
+            i {
+              color: #06164a;
+            }
+            .fa-minus {
+              display: none;
+            }
+            .fa-plus {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .faq-body {
+      padding: 20px 50px 20px 50px;
+      p {
+        font-size: 14px;
+        line-height: 2.1;
+        color: #99bffb;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @include breakpoint(md){
+        padding: 15px 50px 30px 50px;
+      }
+    }
+  }
+}

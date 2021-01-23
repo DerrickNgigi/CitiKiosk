@@ -1,0 +1,475 @@
+
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	padding: 40px 20px;
+}
+
+.menu-btn a {
+	padding: 15px 30px !important;
+    background-color: #2e46c9;
+    color: white !important;
+	font-size: 14px !important;
+	text-align: center !important;
+	font-family: $ff-open-sans;
+	font-weight: 400;
+	@include transition(0.3s);
+	&:hover {
+		background-color: #2e46c9 !important;
+		transform: translateY(-5px)
+	}
+	@include breakpoint(lg){
+		padding: 15px 30px !important;
+		border-radius: 50px;
+	}
+	@include breakpoint(xl){
+		padding: 15px 50px !important;
+		margin-left: 15px;
+	}
+}
+
+.nav-menu {
+	li {
+		a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: 500;
+			padding: 16px 36px 10px 12px;
+			text-align: right;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+			@include breakpoint(lg){
+				padding: 16px 12px 10px 12px;
+				text-align: left;
+				border-bottom: none;
+			}
+			@include breakpoint(xl){
+				padding: 16px 20px 10px 20px;
+			}
+			span {
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 0%;
+					height: 1px;
+					background-color: $white;
+					opacity: 0.4;
+					@include transition(0.3s);
+				}
+			}
+			&.active,&:hover {
+				background-color: $white;
+				color: $title-color;
+			}
+			@include breakpoint(lg){
+				&:hover,&.active {
+					background-color: transparent;
+					color: $white;
+					span {
+						&:after {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		&.dropdown {
+			position: relative;
+			.submenu {
+				
+				list-style: none;
+				padding-left: 0;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-right: 30px;
+				box-shadow: 0 0 10px 0 rgba(black, 0.1);
+				margin-bottom: 0;
+				display: none;
+				li {
+					a {
+						padding: 13px 20px;
+						color: $white;
+						font-size: 80%;
+						display: block;
+						@include transition(0.3s);
+						&:hover {
+							background-color: $base-color;
+							color: white;
+						}
+						&.active-submenu {
+							// background-color: white;
+							color: $base-color;
+						}
+					}
+				}
+				@include breakpoint(lg){
+					display: block;
+					padding-right: 0;
+					min-width: 230px;
+					background-color: white;
+					position: absolute;
+					left: 0;
+					top: 100%;
+					@include transform(scaleY(0));
+					transform-origin: top;
+					@include transition(0.3s);
+					li {
+						a {
+							padding: 13px 20px;
+							color: $title-color;
+							font-size: 80%;
+							display: block;
+							@include transition(0.3s);
+							&:hover {
+								background-color: $base-color;
+								color: white;
+							}
+							&.active-submenu {
+								background-color: $base-color;
+								color: white;
+							}
+						}
+					}
+				}
+				
+				
+			}
+			&:hover {
+				@include breakpoint(lg){
+					.submenu {
+						@include transform(scaleY(1));
+					}
+				}
+			}
+			&.open-menu {
+				.submenu {
+					// display: block;
+				}
+			}
+		}
+	}
+}
+
+
+.axsis-main-menu-area {
+	.navbar-brand1 {
+		display: block;
+	}
+	.navbar-brand2 {
+		display: none;
+	}
+	&.style2 {
+		.nav-menu {
+			li {
+				a {
+					@include breakpoint(lg){
+						color: $title-color;
+						span {
+							&:after {
+								background-color: $title-color;
+							}
+						}
+					}
+				}
+			}
+		}
+		.menu-bar {
+			span {
+				background-color: $title-color;
+			}
+		}
+	}
+	&.fixed-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		background-color: $white;
+		padding: 10px 20px;
+		box-shadow: 0 1px 3px 0 rgba($black, 0.06);
+		@include breakpoint(lg){
+			padding: 17px 20px;
+		}
+		.navbar-brand1 {
+				display: none;
+			}
+			.navbar-brand2 {
+				display: block;
+			}
+		.nav-menu {
+			li {
+				a {
+					@include breakpoint(lg){
+						color: $title-color;
+						span {
+							&:after {
+								background-color: $title-color;
+							}
+						}
+					}
+				}
+			}
+		}
+		.menu-bar {
+			span {
+				background-color: $title-color;
+			}
+		}
+	}
+}
+
+
+// search options
+.search-body {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba($title-color, 0.98);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	@include transform(scaleY(0));
+	transform-origin: top;
+	@include transition(0.3s);
+	.menu-search-form {
+		max-width: 500px;
+		width: 100%;
+		position: relative;
+		opacity: 0;
+		@include transform(translateY(50px));
+		@include transition(0.5s);
+		input {
+			width: 100%;
+			padding: 20px 40px;
+			font-size: 24px;
+			text-align: center;
+			background-color: transparent;
+			border: none;
+			border-bottom: 2px solid $white;
+			color: $white;
+			outline: none;
+			&::placeholder {
+				color: $white;
+			}
+			@include breakpoint(lg){
+				font-size: 36px;
+			}
+		}
+		i {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			color: $white;
+			display: none;
+		}
+	}
+	.close-search {
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		top: 10%;
+		right: 5%;
+		cursor: pointer;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top:50%;
+			margin-top: -3px;
+			width: 100%;
+			height: 3px;
+			background-color: $white; 
+			@include transform(rotate(45deg));
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top:50%;
+			margin-top: -3px;
+			width: 100%;
+			height: 3px;
+			background-color: $white; 
+			@include transform(rotate(-45deg));
+		}
+	}
+}
+.home3 {
+	.search-body {
+		background-color: rgba(#01d55e, 0.98);
+	}
+}
+
+.search-open {
+	.search-body {
+		@include transform(scaleY(1));
+	}
+	.menu-search-form {
+		transition-delay: 0.5s;
+		opacity: 1;
+		@include transform(translateY(0px));
+	}
+}
+
+
+// mobile menu scss
+.menu-bar {
+	width: 45px;
+	height: 40px;
+	// background-color: $white;
+	position: relative;
+	@include border-radius(3px);
+	span {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 30px;
+		height: 3px;
+		margin-top: -1px;
+		margin-left: -15px;
+		background-color: $white;
+		&:nth-child(1){
+			margin-top: -9px;
+		}
+		&:nth-child(2){
+			
+		}
+		&:nth-child(3){
+			margin-top: 7px;
+		}
+	}
+}
+
+@include breakpoint(mlg){
+	.op-mobile-menu {
+		position: fixed;
+		top: 0;
+		left: -250px;
+		width: 250px;
+		height: 100vh;
+		background-color: $title-color;
+		@include transition(0.3s);
+		overflow-y: auto;
+		// @include breakpoint(lg){
+		// 	position: static;
+		// 	width: auto;
+		// 	height: auto;
+		// 	background-color: transparent;
+		// }
+		.m-menu-header {
+			padding: 30px 15px;
+		}
+		.close-button {
+			position: relative;
+			width: 35px;
+			height: 35px;
+			background-color: $white;
+			@include border-radius(50%);
+			&:after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 60%;
+				height: 2px;
+				margin-top: -1px;
+				margin-left: -11px;
+				background-color: $title-color;
+				@include transform(rotate(-45deg));
+				transform-origin: center;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 60%;
+				height: 2px;
+				margin-top: -1px;
+				margin-left: -11px;
+				background-color: $title-color;
+				@include transform(rotate(45deg));
+				transform-origin: center;
+			}
+		}
+	}
+
+
+	.mobile-menu-open {
+		.op-mobile-menu {
+			left: 0;
+		}
+	}
+}
+
+
+
+
+// homepage 3
+.home3 {
+	#loading {
+		background-color: #01d85f;
+	}
+	@include breakpoint(lg){
+		.nav-menu li.dropdown .submenu li a:hover {
+			background-color: #01d85f;
+		}
+		.nav-menu li.dropdown .submenu li a.active-submenu {
+		    background-color: #01d85f;
+		    color: white;
+		}
+	}
+}
+
+
+
+// home 5 
+.home5 {
+	@media (min-width: 992px){
+		.nav-menu li a,.nav-menu li a:hover, .nav-menu li a.active {
+			background-color: transparent;
+			color: #99bffb;
+		}
+		.nav-menu li.menu-btn a {
+			border: 1px solid #0644d2;
+			color: #99bffb !important;
+			margin-left: 20px;
+			padding: 12px 40px !important;
+			&:hover {
+				background-color: #0644d2;
+				color: white;
+			}
+		}
+		.axsis-main-menu-area.fixed-menu {
+			background-color: rgb(4, 29, 109);
+			.nav-menu li a,.nav-menu li a:hover, .nav-menu li a.active {
+				background-color: transparent;
+				color: #d23e6d;
+				span:after {
+					background-color: #d23e6d;
+					opacity: 0.8;
+				}
+			}
+			.nav-menu li a,.nav-menu li a:hover, .nav-menu li a {
+				background-color: transparent;
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+
+// rgb(4, 29, 109)

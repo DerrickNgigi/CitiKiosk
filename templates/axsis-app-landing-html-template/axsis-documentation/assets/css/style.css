@@ -1,0 +1,516 @@
+/*!
+ * Bootstrap Reboot v4.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #33414a;
+  text-align: left;
+  letter-spacing: 0.03px;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.375em;
+}
+
+h3 {
+  font-size: 1.875em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+  margin: 5px 0;
+}
+
+h6 {
+  font-size: 1.125em;
+  margin: 5px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2e3c40;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.312;
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: inherit;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  margin: 0 0 1.75em;
+  color: #33414a;
+  line-height: 2.25;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+dfn {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+a {
+  color: #33414a;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=date],
+input[type=time],
+input[type=datetime-local],
+input[type=month] {
+  -webkit-appearance: listbox;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/*# sourceMappingURL=bootstrap-reboot.css.map */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 23px 30px;
+  box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1;
+}
+@media (min-width: 992px) {
+  .header {
+    padding: 23px 70px;
+  }
+}
+.header .social-media-list li a {
+  padding: 10px;
+}
+
+.body-wrapper {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  right: 0;
+}
+
+.left-content {
+  width: 250px;
+  height: 100vh;
+  background: #f8f9fa;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 82px;
+  left: -250px;
+  z-index: 99;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 992px) {
+  .left-content {
+    width: 300px;
+    position: static;
+  }
+}
+.left-content .nav-controller {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.left-content .nav-controller .nav-pills .nav-link {
+  padding-left: 50px;
+  border-radius: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.left-content .nav-controller .nav-pills .nav-link.active {
+  background-color: #6f64e7;
+}
+
+.right-content {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media (min-width: 992px) {
+  .right-content {
+    width: calc(100% - 300px);
+  }
+}
+
+.content-body-area {
+  margin-top: 50px;
+  margin-bottom: 150px;
+  background-color: #fff;
+  padding: 60px 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-option {
+  width: 40px;
+  height: 40px;
+  background-color: #ff5c5c;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: 2;
+  border-radius: 2px;
+}
+@media (min-width: 992px) {
+  .sidebar-option {
+    display: none;
+  }
+}
+.sidebar-option span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  margin-left: -15px;
+  margin-top: -1px;
+  background-color: #fff;
+}
+.sidebar-option span:nth-child(1) {
+  margin-top: -9px;
+}
+.sidebar-option span:nth-child(3) {
+  margin-top: 6px;
+}
+
+.sidebar-open .left-content {
+  left: 0px;
+}
+
+pre {
+  background-color: #222;
+  color: #fff;
+  padding: 30px;
+  border: 1px solid #111;
+}
+
+.gap {
+  height: 100px;
+  width: 100%;
+}
+.right-content{
+	background: #130c61;
+} 
+.left-content .nav-controller .nav-pills .nav-link.active {
+    background-color: #130c61;
+}
+.sidebar-option {
+    width: 40px;
+    height: 40px;
+    background-color: #1405ec;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 2;
+    border-radius: 2px;
+}
+.left-content .nav-controller {
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+/*# sourceMappingURL=style.css.map */

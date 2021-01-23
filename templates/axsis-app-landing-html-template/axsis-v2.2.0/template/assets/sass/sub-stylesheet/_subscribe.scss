@@ -1,0 +1,103 @@
+
+.subscribe-container {
+	background-size: cover;
+	height: auto;
+	@include breakpoint(lg){
+		height: auto;
+	}
+	.row {
+		min-height: 100vh;
+	}
+}
+
+
+.subscribe-image {
+	img {
+		width: 90%;
+		@include breakpoint(md){
+			width: 70%;
+		}
+		@include breakpoint(lg){
+			width: 100%;
+		}
+		@include breakpoint(xxl-desktop){
+			transform: scale(1.1);
+		}
+	}
+}
+
+// subscribe-content
+.subscribe-content {
+	h2 {
+		font-size: 30px;
+		line-height: 1.3;
+		position: relative;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			margin-left: -20px;
+			width: 40px;
+			bottom: 0;
+			height: 3px;
+			background-color: #6f64e7;
+		}
+		@include breakpoint(lg){
+			font-size: 36px;
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+			line-height: 1.16;
+			&:after {
+				left: 0;
+				margin-left: -0;
+			}
+		}
+	}
+	p {
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom:  40px;
+	}
+}
+
+
+
+// subcribe-form 
+.subcribe-form {
+	max-width: 480px;
+	width: 100%;
+	display: flex;
+	box-shadow: 0 0 50px 0 rgba(black, 0.1);
+	margin: auto;
+	@include breakpoint(lg){
+		margin: 0;
+	}
+	input {
+		width: calc(100% - 120px);
+		padding: 16px 25px;
+		border: none;
+		border-radius: 5px;
+		border-left: 3px solid #6f64e7;
+		@include breakpoint(xl){
+			padding: 24px 25px;
+		}
+	}
+	button {
+		width: 120px;
+		text-align: center;
+		background-color: #6f64e7;
+		color: white;
+		font-size: 16px;
+		font-weight: 700;
+		padding: 15px 20px;
+		border: none;
+		border-radius: 5px;
+		@include transition(0.3s);
+		&:hover {
+			background-color: #273167;
+			color: white;
+		}
+	}
+}

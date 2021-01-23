@@ -1,0 +1,679 @@
+.banner-section {
+	height: auto;
+	// background-image: linear-gradient(to top right, #5049ad, #7b4cdb);
+	background-image: url(../images/banner/bg.png);
+	position: relative;
+	padding-top: 130px;
+	overflow: hidden;
+	background-position: 0% 100%;
+	background-size: cover;
+	.banner-content {
+		text-align: center;
+		padding-bottom: 150px;
+		position: relative;
+		z-index: 1;
+	}
+	@include breakpoint(md){
+		padding-top: 165px;
+	}
+	@include breakpoint(lg){
+		height: 100vh;
+		padding-top: 0;
+		.banner-content {
+			height: 100%;
+			text-align: left;
+			padding-bottom: 0;
+		}
+	}
+}
+
+.banner-text {
+	h1 {
+		font-size: 30px;
+	    color: #fff;
+	    margin-bottom: 15px;
+	    line-height: 1.2;
+	    @include breakpoint(sm){
+	    	font-size: 36px;
+	    	line-height: 1.2;
+	    }
+	    @include breakpoint(xxl-desktop){
+	    	font-size: 42px;
+	    	line-height: 1.3;
+	    }
+	}
+	p {
+		color: #fff;
+		margin-bottom: 30px;
+	}
+	.button-store {
+		.custom-btn {
+			padding: 10px 20px;
+			border: 1px solid #fff;
+			font-weight: 500;
+			background-color: rgba($white, 0.05);
+			border-radius: 3px;
+			i {
+				font-size: 27px;
+				margin-right: 10px;
+				color: $white;
+				@include transition(0.3s);
+			}
+			p {
+				font-size: 12px;
+				margin: 0;
+				line-height: 1.4;
+				color: $white;
+				font-weight: 500;
+				text-align: left;
+				@include transition(0.3s);
+				span {
+					display: block;
+					font-size: 17px;
+					color: $white;
+					font-weight: 500;
+					@include transition(0.3s);
+				}
+			}
+			&.active {
+				background-color: rgba($white, 1);
+				i {
+					color: $title-color;
+				}
+				p {
+				color: $title-color;
+				span {
+					color: $title-color;
+				}
+			}
+			}
+		}
+	}
+}
+
+.banner-image-content {
+	@include breakpoint(lg){
+		position: absolute;
+		left: 50%;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		padding-left: 100px;
+		padding-top: 100px;
+		z-index: 2;
+	}
+	@include breakpoint(xxl-desktop){
+		padding-top: 50px;
+	}
+}
+
+.banner-joint-image {
+	position: relative;
+	.img1 {
+		max-width: 100%;
+		box-shadow: 0 10px 30px 0 rgba(13,0,46,0.1);
+		@include border-radius(5px);
+	}
+	.img2 {
+		position: absolute;
+		left: 0px;
+		top: -170px;
+		box-shadow: 0 5px 15px 0 rgba(13,0,46,0.1);
+		@include border-radius(20px);
+		@include transform(scale(0.5));
+		
+		@include breakpoint(sm){
+			@include transform(scale(0.7));
+			left: 0px;
+			top: -150px;
+		}
+		@include breakpoint(md){
+			@include transform(scale(1));
+			left: 50px;
+			top: -100px;
+		}
+		@include breakpoint(lg){
+			@include transform(scale(0.6));
+			top: -150px;
+			left: 10px;
+		}
+		@include breakpoint(xl){
+			left: 50px;
+			top: -100px;
+			@include transform(scale(0.8));
+		}
+		@include breakpoint(xxl-desktop){
+			top: -100px;
+			@include transform(scale(1));
+		}
+	}
+}
+
+
+
+
+
+// banner style 2 
+.banner-section.style2 {
+	position: relative;
+	background-image: none;
+	@include breakpoint(xxl-desktop){
+		padding-top: 120px;
+		height: 82vh;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0px;
+		width: 330px;
+    	height: 430px;
+		background-image: url(../images/banner/right-shape.png);
+		background-size: cover;
+		display: none;
+		@include breakpoint(lg){
+			display: block;
+		}
+		@include breakpoint(xxl-desktop){
+			width: 470px;
+			height: 600px;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		right: 80px;
+		top: 70px;
+		width: 325px;
+		height: 325px;
+		background-image: url(../images/circle-shape.png);
+		background-size: cover;
+		display: none;
+		@include breakpoint(lg){
+			display: block;
+		}
+		@include breakpoint(xxl-desktop){
+			width: 525px;
+			height: 525px;
+		}
+	}
+	.banner-text {
+		h1 {
+			font-size: 30px;
+		    color: #273167;
+		    margin-bottom: 15px;
+		    line-height: 1.2;
+		    @include breakpoint(sm){
+		    	font-size: 36px;
+		    	line-height: 1.2;
+		    }
+		    @include breakpoint(xxl-desktop){
+		    	font-size: 42px;
+		    	line-height: 1.33;
+		    }
+		}
+		p {
+			color: #273167;
+			margin-bottom: 30px;
+		}
+		.button-store {
+			.custom-btn {
+				padding: 10px 20px;
+				border: 1px solid #fff;
+				font-weight: 500;
+				background-color: rgba(white, 1);
+				border-radius: 3px;
+				box-shadow: 0 10px 20px 0 rgba($title-color, 0.1);
+				i {
+					font-size: 27px;
+					margin-right: 10px;
+					color: $title-color;
+					@include transition(0.3s);
+				}
+				p {
+					font-size: 12px;
+					margin: 0;
+					line-height: 1.4;
+					color: $title-color;
+					font-weight: 500;
+					@include transition(0.3s);
+					span {
+						display: block;
+						font-size: 17px;
+						color: $title-color;
+						font-weight: 500;
+						@include transition(0.3s);
+					}
+				}
+				&.active {
+					background-color: rgba($title-color, 1);
+					i {
+						color: white;
+					}
+					p {
+					color: white;
+					span {
+						color: white;
+					}
+				}
+				}
+			}
+		}
+	}
+	.banner-image-content {
+		@include breakpoint(xxl-desktop){
+			padding-top: 200px;
+		}
+	}
+}
+
+
+
+
+
+
+// banner style 2 
+.banner-section.style3 {
+	position: relative;
+	overflow: visible;
+	background-image: url(../images/home3/banner/banner-bg.png);
+	background-size: unset;
+	background-position: unset;
+	@include breakpoint(lg){
+		height: 700px;
+	}
+	@include breakpoint(xxl-desktop){
+		height: 90vh;
+	}
+	&:before {
+		display: none;
+	}
+	&:after {
+		display: none;
+	}
+	.banner-text {
+		h1 {
+			font-size: 30px;
+		    color: $title-color;
+		    margin-bottom: 15px;
+		    line-height: 1.2;
+		    @include breakpoint(sm){
+		    	font-size: 36px;
+		    	line-height: 1.2;
+		    }
+		    @include breakpoint(xxl-desktop){
+		    	font-size: 42px;
+		    	line-height: 1.33;
+		    }
+		}
+		p {
+			color: $title-color;
+			margin-bottom: 30px;
+		}
+		.button-store {
+			.custom-btn {
+				padding: 10px 20px;
+				border: 1px solid #fff;
+				font-weight: 500;
+				background-color: rgba(white, 1);
+				border-radius: 3px;
+				box-shadow: 0 10px 20px 0 rgba($title-color, 0.1);
+				i {
+					font-size: 27px;
+					margin-right: 10px;
+					color: $title-color;
+					@include transition(0.3s);
+				}
+				p {
+					font-size: 12px;
+					margin: 0;
+					line-height: 1.4;
+					color: $title-color;
+					font-weight: 500;
+					@include transition(0.3s);
+					span {
+						display: block;
+						font-size: 17px;
+						color: $title-color;
+						font-weight: 500;
+						@include transition(0.3s);
+					}
+				}
+				&.active {
+					background-color: rgba($title-color, 1);
+					i {
+						color: white;
+					}
+					p {
+					color: white;
+					span {
+						color: white;
+					}
+				}
+				}
+			}
+		}
+	}
+}
+
+
+// banner form 
+.banner-form {
+	background-color: white;
+	box-shadow: 0 0 30px rgba(black, 0.1);
+	padding: 20px 30px;
+	border-radius: 5px;
+	max-width: 465px;
+	width: 100%;
+	display: inline-block;
+	@include breakpoint(lg){
+		margin-left: 50px;
+	}
+	@include breakpoint(xxl-desktop){
+		padding: 30px 40px;
+		margin-left: auto;
+	}
+	h5 {
+		color: #01d85f;
+		font-size: 20px;
+		font-weight: 500;
+		margin-bottom: 0px;
+	}
+	p {
+		font-size: 13px;
+		margin-bottom: 10px;
+		@include breakpoint(xxl-desktop){
+			margin-bottom: 30px;
+		}
+	}
+	form {
+		.form-group {
+			margin-bottom: 10px;
+			@include breakpoint(xxl-desktop){
+				margin-bottom: 25px;
+			}
+		}
+		label {
+			font-size: 13px;
+		}
+		input {
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+			background-color: white;
+			border: none;
+			padding: 12px 25px;
+			height: auto;
+		}
+		button {
+			width: 100%;
+			padding: 13px 25px;
+			background-color: #01d85f;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			@include transition(0.3s);
+			&:hover {
+				transform: translateY(-5px);
+			}
+		}
+	}
+}
+.home3 {
+	.banner-content {
+		padding-bottom: 65px;
+		@include breakpoint(lg){
+			padding-top: 100px;
+			padding-bottom: 165px;
+		}
+		height: 100%;
+		.container,.row {
+			height: 100%;
+		}
+	}
+}
+
+
+
+
+// banner style 4
+.banner-section.style4 {
+	position: relative;
+	background-image: url(../images/home4/banner/bg.jpg);
+	@include breakpoint(lg){
+		height: 100vh;
+	}
+	&:before {
+		display: none;
+	}
+	&:after {
+		display: none;
+	}
+	.banner-text {
+		h1 {
+			font-size: 30px;
+		    color: $title-color;
+		    margin-bottom: 15px;
+			line-height: 1.2;
+			color: white;
+		    @include breakpoint(sm){
+		    	font-size: 36px;
+		    	line-height: 1.2;
+		    }
+		    @include breakpoint(xxl-desktop){
+		    	font-size: 40px;
+		    	line-height: 1.3;
+		    }
+		}
+		p {
+			color: #a6b5ff;
+			font-size: 16px;
+		}
+		.button-store4 {
+			.custom-btn {
+				padding: 15px 75px 15px 45px;
+				border: 1px solid #fff;
+				font-weight: 400;
+				font-size: 14px;
+				background-color: transparent;
+				text-transform: uppercase;
+				border: 1px solid #6a7fef;
+				border-radius: 50px;
+				color: white;
+				font-family: $ff-open-sans;
+				position: relative;
+				&:first-child {
+					span {
+						display: block;
+						position: absolute;
+						right: 10px;
+						top: 50%;
+						margin-top: -17px;
+						width: 35px;
+						height: 35px;
+						border-radius: 50%;
+						background-color: #2e46c9;
+						color: white;
+						line-height: 35px;
+						text-align: center;
+					}
+				}
+				&:last-child {
+					span {
+						display: block;
+						position: absolute;
+						right: 20px;
+						top: 50%;
+						margin-top: -15px;
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background-color: #2e46c9;
+						color: white;
+						line-height: 31px;
+						text-align: center;
+						font-size: 10px;
+					}
+				}
+				&:hover,&.active {
+					background-color: #2e46c9;
+					color: white;
+					border-color: #2e46c9;
+					&:first-child {
+						span {
+							background-color: #2d4093;
+							color: white;
+						}
+					}
+					&:last-child {
+						span {
+							background-color: #2d4093;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+	.banner-image-content {
+		@include breakpoint(lg){
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			padding-left: 100px;
+			padding-top: 100px;
+		}
+		@include breakpoint(xxl-desktop){
+			padding-top: 150px;
+		}
+	}
+}
+
+
+
+
+
+
+// banner style 5
+.banner-section.style5 {
+	position: relative;
+	background-image: none;
+	background-color: transparent;
+	height: auto;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 550px;
+		height: 800px;
+		background-image: url(../images/home5/banner-left-shape.png);
+		background-size: cover;
+		display: none;
+		@include breakpoint(lg){
+			display: block;
+		}
+	}
+	&:after {
+		display: none;
+	}
+	.banner-content {
+		padding-bottom: 30px;
+		@include breakpoint(lg){
+			padding-top: 250px;
+		}
+	}
+	.banner-text {
+		h1 {
+			font-size: 26px;
+		    color: $title-color;
+		    margin-bottom: 10px;
+			line-height: 1.2;
+			color: white;
+		    @include breakpoint(sm){
+		    	font-size: 33px;
+		    	line-height: 1.2;
+		    }
+		    @include breakpoint(xxl-desktop){
+		    	font-size: 38px;
+		    	line-height: 1.3;
+		    }
+		}
+		p {
+			color: #a6b5ff;
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		.button-store4 {
+			.custom-btn {
+				padding: 12px 70px 12px 40px;
+				border: 1px solid #fff;
+				font-weight: 400;
+				font-size: 14px;
+				background-color: transparent;
+				text-transform: uppercase;
+				border: 1px solid #6a7fef;
+				border-radius: 50px;
+				color: white;
+				font-family: $ff-open-sans;
+				position: relative;
+				&:first-child {
+					span {
+						display: block;
+						position: absolute;
+						right: 10px;
+						top: 50%;
+						margin-top: -17px;
+						width: 35px;
+						height: 35px;
+						border-radius: 50%;
+						background-color: #0b50e3;
+						color: white;
+						line-height: 35px;
+						text-align: center;
+					}
+				}
+				&:last-child {
+					span {
+						display: block;
+						position: absolute;
+						right: 20px;
+						top: 50%;
+						margin-top: -15px;
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background-color: #0b50e3;
+						color: white;
+						line-height: 31px;
+						text-align: center;
+						font-size: 10px;
+					}
+				}
+				&:hover,&.active {
+					background: linear-gradient(to left, #bb2970 0%, #ec5969 100%);
+					color: white;
+					border: 1px solid rgba($color: #000000, $alpha: 0);
+					&:first-child {
+						span {
+							background-color: #9d495a;
+							color: white;
+						}
+					}
+					&:last-child {
+						span {
+							background-color: #9d495a;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+	.banner-image {
+		img {
+			max-width: 950px;
+			width: 90%;
+		}
+	}
+}

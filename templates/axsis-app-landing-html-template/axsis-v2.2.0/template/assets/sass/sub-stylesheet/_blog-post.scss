@@ -1,0 +1,386 @@
+
+
+
+.post-item {
+	box-shadow: 0 0 10px 0 rgba($black, 0.06);
+	@include border-radius(3px);
+	background-color: white;
+	.post-thumb {
+		overflow: hidden;
+		img {
+			width: 100%;
+			@include transition(0.3s);
+		}
+	}
+	.post-content {
+		padding: 30px 25px;
+		.meta-post {
+			margin-bottom: 10px;
+		}
+		.title {
+			a {
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 1.6;
+				@include breakpoint(xxl-desktop){
+					font-size: 20px;
+				}
+				@include transition(0.3s);
+				&:hover {
+					color: $base-color;
+				}
+			}
+		}
+		// &:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	left: 25px;
+		// 	bottom: 0;
+		// 	width: 70px;
+		// 	height: 2px;
+		// 	background-color: $base-color;
+		// 	@include transition(0.3s);
+		// }
+	}
+	&:hover {
+		.post-thumb {
+			img {
+				@include transform(scale(1.1));
+			}
+		}
+	}
+}
+
+.meta-post {
+	li {
+		font-size: 14px;
+		font-weight: 400;
+		margin-right: 10px;
+		@include breakpoint(sm){
+			margin-right: 30px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		.icon {
+			color: $base-color;
+			margin-right: 4px;
+			font-weight: 700;
+		}
+		.meta-content,.meta-link {
+			color: #777b92;
+		}
+	}
+}
+
+.blog-btn {
+	font-size: 14px;
+	color: #273167;
+	font-weight: 400;
+	span {
+		margin-left: -2px;
+		font-size: 12px;
+		@include transition(0.3s);
+	}
+	&:hover {
+		span {
+			margin-left: 2px;
+		}
+	}
+}
+
+.active {
+	>.post-item {
+		.post-thumb {
+			img {
+				@include transform(scale(1.1));
+			}
+		}
+		.post-content,.border-effect {
+			.title {
+				a {
+					color: $base-color;
+				}
+			}
+			&:after {
+				width: calc(100% - 50px);
+				background-color: $base-color;
+			}
+			.blog-btn {
+				color: $base-color;
+			}
+		}
+	}
+}
+
+.border-effect {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 25px;
+		bottom: 0;
+		width: 70px;
+		height: 2px;
+		background-color: $title-color;
+		@include transition(0.3s);
+	}
+}
+
+
+
+//  single page scss
+.entry-wrapper {
+	box-shadow: 0 0 50px 0 rgba($black, 0.1);
+	padding: 30px;
+}
+
+.entry-single {
+	.tag-list,.share-list {
+		li {
+			&:first-child {
+				font-size: 20px;
+				font-weight: 700;
+				color: $title-color;
+			}
+		}
+	}
+	.entry-header {
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+		}
+	}
+	.title {
+		font-size: 24px;
+	}
+	p {
+		span {
+			color: $base-color;
+		}
+	}
+}
+
+blockquote {
+	padding: 25px 30px 25px 25px;
+	position: relative;
+	box-shadow: 0 0 10px 0 rgba($black, 0.06);
+	@include border-radius(5px);
+	overflow: hidden;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 5px;
+		height: 100%;
+		background-color: $base-color;
+	}
+	&:before {
+		content:'';
+		position: absolute;
+		right: 0px;
+		top: 0%;
+		width: 72px;
+		height: 60px;
+		background-image: url(../images/qoute.png);
+		z-index: 2;
+		background-repeat: no-repeat;
+	}
+	p {
+		font-size: 20px;
+		color: #363636;
+		margin-bottom: 15px;
+		line-height: 30px;
+	}
+	span {
+		font-size: 14px;
+		color: $base-color;
+		span {
+			color: $desc-color;
+		}
+	}
+	@include breakpoint(md){
+		padding: 25px 150px 25px 60px;
+		&:before {
+			right: 45px;
+			top: 50%;
+			width: 72px;
+			height: 60px;
+			margin-top: -50px;
+		}
+	}
+}
+
+
+// share-list
+.share-list {
+	li {
+		display: inline-block;
+		a {
+			width: 18px;
+			height: 18px;
+			border-radius: 3px;
+			font-size: 10px;
+			color: rgba($white, 0.8);
+			background-color: #e1e1e1;
+			@include transition(0.3s);
+			display: block;
+			margin: 2px;
+			text-align: center;
+			line-height: 19px;
+			&:hover {
+				background-color: $base-color;
+				color: $white;
+			}
+		}
+	}
+}
+
+
+
+
+// comments
+.comment-title {
+	i {
+		color: $base-color;
+		margin-right: 7px;
+	}
+	color: $title-color;
+	font-weight: 400;
+}
+
+//comment item 
+.comment-item {
+	.comment-author {
+		background-color: #f8f8fb;
+		padding: 20px 25px;
+		.author-image {
+			width: 60px;
+			height: 60px;
+			overflow: hidden;
+			@include border-radius(50%);
+			img {
+				width: 100%;
+			}
+		}
+		.author-name-info {
+			width: calc(100% - 60px);
+			padding-right: 10px;
+			padding-left: 15px;
+			position: relative;
+			.name {
+				font-size: 16px;
+				font-weight: 700;
+			}
+			.publish-date {
+				font-size: 14px;
+				margin-bottom: 0;
+			}
+			.reply-btn {
+				font-size: 12px;
+				padding: 7px 20px;
+				background-color: #777b92;
+				color: $white;
+				@include border-radius(3px);
+				@include transition(0.3s);
+				margin-top: 10px;
+				display: inline-block;
+				&:hover {
+					background-color: $base-color;
+					color: white;
+				}
+			}
+			@include breakpoint(md){
+				padding-right: 100px;
+				.reply-btn {
+					position: absolute;
+					right: 20px;
+					top: 50%;
+					margin-top: -13px;
+				}
+			}
+		}
+	}
+	.comment-content {
+		padding: 20px 25px;
+		margin-bottom: 25px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+	.comment-item {
+		margin-left: 30px;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 3px;
+			height: 100%;
+			background-color: $base-color;
+			z-index: 1;
+		}
+	}
+}
+
+
+
+
+
+// response-comment-section
+.respons-contact-form {
+	.form-item {
+		position: relative;
+		i {
+			position: absolute;
+			right: 20px;
+			top: 15px;
+			color: #dddfec;
+		}
+		input,textarea {
+			width: 100%;
+			padding: 15px 30px;
+			border: 1px solid #e2e7f3;
+			outline: none;
+			margin-bottom: 10px;
+			color: #dddfec;
+			@include border-radius(3px);
+			&:hover,&:active,&:focus {
+				border-color: $base-color;
+			}
+		}
+		textarea {
+			min-height: 120px;
+			margin-bottom: 30px;
+		}
+	}
+	.submit {
+		padding: 15px 30px;
+		border: none;
+		background-color: $base-color;
+		color: $white;
+		@include border-radius(5px);
+		@include transition(0.3s);
+		&:hover {
+			background-color: $title-color;
+			color: white;
+		}
+	}
+}
+
+
+
+.home3 {
+	.meta-post li .icon {
+		color: #01d85f;
+	}
+	.active > .post-item .post-content .title a, .active > .post-item .border-effect .title a {
+	    color: #01d85f;
+	}
+	.active > .post-item .post-content .blog-btn, .active > .post-item .border-effect .blog-btn {
+	    color: #01d85f;
+	}
+}

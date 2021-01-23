@@ -1,0 +1,40 @@
+axsis - SaaS & App Landing Page Template
+
+axsis v2.2.0  Date: 4 August, 2020
+1. Unique Homepage 4
+2. Unique Homepage 5
+3. Design Improvement
+
+axsis v2.0.0  Date: 23 June, 2020
+1. Unique Homepage 3
+2. Singin page
+3. Signup Page
+4. Reset Password Page
+5. 404 page
+6. Coming Soon Page
+7. Downoad Page
+8. Faq page
+9. Pricing page
+10. subscribe page
+11. Team page
+12. Team single page
+13. Testimonial Page
+14. Thank you page
+15. Design Improvement
+
+axsis v1.2.0   Date: 04-05-2020
+1. Unique Homepage 2
+
+axsis v1.1.0   Date: 22-03-2020
+
+1. Add Blog list fullwidth variation
+2. Add Blog list leftsidebar variation
+3. Add Blog grid fullwidth variation
+4. Add blog grid leftsidebar variation
+5. Add blog grid rightsidebar variation
+6. Add blog single fullwidth variation
+7. Add blog single leftsidebar variation
+
+
+axsis v1.0.0 date 20-03-2020
+initial update

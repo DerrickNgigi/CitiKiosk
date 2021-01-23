@@ -1,0 +1,105 @@
+
+
+
+
+
+// interface slider
+.interface-slider-section {
+	padding-left: 10%;
+	padding-right: 10%;
+	overflow: hidden;
+}
+.interface-slider {
+	@include breakpoint(lg){
+		overflow: hidden;
+	}
+}
+.interface-slider-container {
+	position: relative;
+	.phone-mockup {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 35px;
+		z-index: 2;
+	}
+	padding: 60px 0 100px 0;
+	.swiper-slide {
+		@include breakpoint(xs){
+			@include transform(scale(0.7));
+			@include border-radius(40px);
+			@include transition(0.5s);
+			box-shadow: 0 0 20px 0 rgba($black, 0.1);
+			img {
+				@include border-radius(10px);
+			}
+			&.swiper-slide-next,&.swiper-slide-prev {
+				@include transform(scale(0.9));
+			}
+			&.swiper-slide-next {
+				// margin-left: 50px;
+				// transform: translateX(30px);
+				@include transform(scale(0.9) translateX(30px));
+			}
+			&.swiper-slide-prev {
+				// margin-right: 50px;
+				// transform: translateX(-30px);
+				@include transform(scale(0.9) translateX(-30px));
+			}
+			&.swiper-slide-active {
+				@include transform(scale(1.04));
+				box-shadow: 0 0 30px 0 rgba(#0c002e, 0.1);
+				position: relative;
+				@include border-radius(30px);
+				img {
+					@include border-radius(30px);
+					width: 100%;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					left: -3px;
+					top: -7px;
+					width: 102%;
+					height: 102%;
+					background-image: url(../images/interface-slider/phone-mockup.png);
+					background-size: cover;
+				}
+			}
+		}
+		img {
+			@include border-radius(10px);
+		}
+		&.swiper-slide-active {
+			box-shadow: 0 0 40px 0 rgba(#0c002e, 0.15);
+			position: relative;
+			@include border-radius(30px);
+			img {
+				@include border-radius(30px);
+				width: 100%;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				left: -3px;
+				top: -7px;
+				width: 102%;
+				height: 102%;
+				background-image: url(../images/interface-slider/phone-mockup.png);
+				background-size: 100% 100%;
+			}
+		}
+		
+	}
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+			background-color: #ebebeb;
+			opacity: 1;
+		}
+		.swiper-pagination-bullet-active {
+			background-color: $base-color;
+		}
+	}
+}

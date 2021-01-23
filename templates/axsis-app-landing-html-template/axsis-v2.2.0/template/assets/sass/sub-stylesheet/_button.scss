@@ -1,0 +1,80 @@
+
+.text-btn {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 2.1;
+	text-transform: uppercase;
+	&:hover {
+		color: #2e46c9;
+		text-decoration: underline;
+	}
+}
+
+.custom-btn {
+	padding: 13px 30px;
+	border: 2px solid $base-color;
+	text-align: center;
+	display: inline-block;
+	color: $base-color;
+	@include border-radius(3px);
+	@include transition(0.3s);
+	&:hover {
+		background-color: $base-color;
+		color: $white;
+	}
+}
+
+.blog-custom-btn {
+	font-size: 14px;
+	font-weight: 700;
+	padding: 13px 37px;
+	text-align: center;
+	display: inline-block;
+	color: $white;
+	background-color: $base-color;
+	@include border-radius(3px);
+	@include transition(0.3s);
+	&:hover {
+		background-color: $title-color;
+		color: $white;
+	}
+}
+
+
+
+.button-store3 {
+	.custom-btn {
+		background-color: #01d75f;
+		color: white;
+		border-radius: 40px;
+		padding: 15px 40px; 
+		border: none;
+		@include transition(0.3s);
+		&:hover {
+			transform: translateY(-5px);
+		}
+	}
+	.play-btn {
+		.play {
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			background-color: white;
+			box-shadow: 0 0 20px 0 rgba(black, 0.1);
+			margin-right: 10px;
+			line-height: 58px;
+			text-align: center;
+			color: #01d75f;
+			@include transition(0.3s);
+		}
+		.text {
+			text-decoration: underline;
+		}
+		&:hover {
+			.play {
+				background-color: #01d75f;
+				color: white;
+			}
+		}
+	}
+}
